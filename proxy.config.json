@@ -1,0 +1,11 @@
+{
+  "/tmetricAPI": {
+    "target": "https://app.tmetric.com/api",
+    "secure": false,
+    "changeOrigin": true,
+    "logLevel": "debug",
+    "pathRewrite": {
+      "^/tmetricAPI": ""
+    }
+  }
+}
