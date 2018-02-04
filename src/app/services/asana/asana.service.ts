@@ -1,5 +1,6 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
+import {Observable} from 'rxjs/Observable';
 
 @Injectable()
 export class AsanaService {
@@ -16,5 +17,9 @@ export class AsanaService {
 
     return this.http
       .get('https://app.asana.com/api/1.0/tags/356218431886015/tasks', {params});
+  }
+
+  getTask(externalIssueId: string): Observable<{ data: any }> {
+    return this.http.get<{ data: any }>(`https://app.asana.com/api/1.0/tasks/${externalIssueId}`);
   }
 }
